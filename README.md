@@ -3,17 +3,16 @@
 
 > fReEFLEX Clicker application. Measure your input latency with defined frametimes.
 
-![](doc/breadboard.png?raw=true "Breadboard")
+![](doc/window.png?raw=true "Clicker Window")
 
 ## 📁 Download
-- [releases](https://github.com/fReEFLEX/fReEFLEX-controller/releases)
+- [releases](https://github.com/fReEFLEX/fReEFLEX-clicker/releases)
 
 ## Contents
 - [Download](#-download)
-- [What is this?](#what-is-freeflex)
-- [Required hardware](#required-hardware)
-- [Build it](#build-it)
-- [Installation](#firmware-installation)
+- [What is fReEFLEX?](#what-is-freeflex)
+- [Usage](#usage)
+    - [Serial Port](#serial-port)
 - [Support fReEFLEX project](#-support-freeflex-project)
 - [License](#-license)
 
@@ -29,31 +28,23 @@ The fReEFLEX project includes
 - [GUI](https://github.com/fReEFLEX/fReEFLEX-GUI/) - to operate the controller
 - [3D Application](https://github.com/fReEFLEX/fReEFLEX-clicker/) - 3D application for E2E latency measurement 
 
-## Required hardware
->If you don't want to solder anything make sure to get a Pico with **pre soldered headers**, a **Breadboard** and some **Jumper Wires**.
+## Usage
+Download and unpack latest [release](https://github.com/fReEFLEX/fReEFLEX-clicker/releases). 
+Start the DirectX or OpenGL clicker and start clicking anywhere in the window to produce a bright flash. 
+>Running this application in windowed mode can add a multiple frame buffer and thus increase the latency.
+>This is not true for every 3D game, e.g. windowed Unreal Engine might produce latencies similar to fullscreen. 
+>Every game behaves differently when switching between windowed, borderless and fullscreen modes.
+   
+- `+` | `arrow up`: increase FPS by 10 
+- `-` | `arrow down`: decrease max FPS by 10 
+- `F`: toggle fullscreen
+- `C`: toggle colors between black/white and grey
+- `P`: open [Serial Port](#serial-port)
 
-A fReEFLEX controller can be built in three steps, each extending its capabilities:
-1. [Raspberry Pi Pico](https://www.raspberrypi.com/products/raspberry-pi-pico/) - Measure [System Latency](https://github.com/fReEFLEX/fReEFLEX-GUI/#5-system-latency-mode)
-2. OPT101 light sensor (often as CJMCU-101) - Measure [E2E Latency](https://github.com/fReEFLEX/fReEFLEX-GUI/#4-e2e-latency-mode) and [Light frequency](https://github.com/fReEFLEX/fReEFLEX-GUI/#6-light-frequency)
-3. a spare mouse - Measure [Mouse latency](https://github.com/fReEFLEX/fReEFLEX-GUI/#51-mouse-latency)
+Read the [GUI Documentation](https://github.com/fReEFLEX/fReEFLEX-GUI/) to learn more about how to use this tool.
 
->Measuring with a real mouse is by far the most advanced step but only needed if you want to measure the latency of a specific mouse.
-The mouse needs to have the left mouse button pulled to ground when pushed. Otherwise, it currently is not compatible with a fReEFLEX Controller.
-
-Mice that are known work:
-- Logitech G203
-
-
-## Build it
-⚠️If you are building the Controller on a Breadboard check above image. 
-
-![](doc/schematic.png?raw=true "Breadboard")
-
-## Firmware installation
-1. Hold down the **BOOTSEL** button when you plug in your Pico to your PC.
-    >This puts your Pico into Bootsel mode and it appears as a mass storage device on your PC.
-2. Copy the [latest firmare](https://github.com/fReEFLEX/fReEFLEX-controller/releases) (.uf2) onto your Pico.
-3. The Pico automatically reboots and is ready to be used with the [GUI](https://freeflex.github.io/fReEFLEX-GUI/)
+### Serial Port 
+The Clicker application can establish a connection to the [fReEFLEX Controller](https://github.com/fReEFLEX/fReEFLEX-controller/) via serial port. This improves the results when measuring system latency.
 
 ## ☕ Support fReEFLEX project
 
