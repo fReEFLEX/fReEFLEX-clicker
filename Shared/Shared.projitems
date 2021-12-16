@@ -26,7 +26,6 @@
     <None Include="$(MSBuildThisFileDirectory)Content\obj\DesktopGL\Fonts\RobotoMono-Medium.mgcontent" />
   </ItemGroup>
   <ItemGroup>
-    <EmbeddedResource Include="$(MSBuildThisFileDirectory)Icon.bmp" />
     <EmbeddedResource Include="$(MSBuildThisFileDirectory)Icon.ico" />
   </ItemGroup>
 </Project>

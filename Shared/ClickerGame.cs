@@ -344,7 +344,7 @@ namespace fReEFLEX_clicker
             }
             try { 
                 serialPort.Write(new byte[1] { 0 }, 0, 1);
-            } catch (Exception e)
+            } catch (Exception)
             {
                 Debug.WriteLine("error sending click response");
                 serialPort.Close();
@@ -357,7 +357,7 @@ namespace fReEFLEX_clicker
             try {
                 serialPort.Open();
                 game.delegateSerialState(true);
-            } catch (Exception e)
+            } catch (Exception)
             {
                 Debug.WriteLine("error opening com port " + serialPort.PortName);
                 serialPort.Close();
